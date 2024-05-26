@@ -3,7 +3,7 @@
 
 import java.util.Scanner;
 
-class CalculatorV2 {
+class Calculator {
     public static void main(String[] args) {
 
         //Водный текст
