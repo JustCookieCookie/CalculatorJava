@@ -15,8 +15,8 @@ class CalculatorJava {
 
         //Стартовые данные
         Scanner scanner = new Scanner(System.in);
-        int index = 0;
-        double sum = 0;
+        int index;
+        double sum;
         String sign;
 
         do { 
@@ -50,14 +50,21 @@ class CalculatorJava {
                     String secondNumber = answer[index];
                     double number2 = Double.parseDouble(secondNumber);
 
-                    if (sign.equals("+")) {
-                        sum = number1 + number2;
-                    } else if (sign.equals("-")) {
-                        sum = number1 - number2;
-                    } else if (sign.equals("*")) {
-                        sum = number1 * number2;
-                    } else if (sign.equals("/")) {
-                        sum = number1 / number2;
+                    switch (sign) {
+                        case "+":
+                            sum = number1 + number2;
+                            break;
+                        case "-":
+                            sum = number1 - number2;
+                            break;
+                        case "*":
+                            sum = number1 * number2;
+                            break;
+                        case "/":
+                            sum = number1 / number2;
+                            break;
+                        default:
+                            System.out.println("Неизвестный оператор!");
                     }
 
                 } else if (index <= answer.length - 2) {
@@ -69,15 +76,23 @@ class CalculatorJava {
                     String numberNumber = answer[index];
                     double numberLast = Double.parseDouble(numberNumber);
 
-                    if (sign.equals("+")) {
-                        sum = sum + numberLast;
-                    } else if (sign.equals("-")) {
-                        sum = sum - numberLast;
-                    } else if (sign.equals("*")) {
-                        sum = sum * numberLast;
-                    } else if (sign.equals("/")) {
-                        sum = sum / numberLast;
+                    switch (sign) {
+                        case "+":
+                            sum = sum + numberLast;
+                            break;
+                        case "-":
+                            sum = sum - numberLast;
+                            break;
+                        case "*":
+                            sum = sum * numberLast;
+                            break;
+                        case "/":
+                            sum = sum / numberLast;
+                            break;
+                        default:
+                            System.out.println("Неизвестный оператор!");
                     }
+
                 } else {
                     break;
                 }
